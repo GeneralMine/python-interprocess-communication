@@ -4,13 +4,11 @@
 # Python3 using two named pipes (I/O)
 
 import os
-import sys
 import time
 import json
 
-pipe_name_telemetry = "/home/generalmine/pipe_test_telemetry"
-pipe_name_command = "/home/generalmine/pipe_test_command"
-version = sys.version_info
+pipe_name_command = "~/pipe_test_command"
+pipe_name_telemetry = "~/pipe_test_telemetry"
 commands = [
     {
         "channel": "function",
@@ -39,13 +37,13 @@ commands = [
     }
 ]
 
-# Command
+# Command: Write Pipe
 if not os.path.exists(pipe_name_command):
     os.mkfifo(pipe_name_command)
 commandPipe = os.open(pipe_name_command, os.O_WRONLY)
 commandCounter = 0
 
-# Telemetry
+# Telemetry: Read Pipe
 if not os.path.exists(pipe_name_telemetry):
     os.mkfifo(pipe_name_telemetry)
 telemetryPipe = open(pipe_name_telemetry, "r")
@@ -53,12 +51,12 @@ telemetryCounter = 0
 
 # Loop
 while True:
-    # Telemetry
+    # Telemetry: Read
     line = json.loads(telemetryPipe.readline()[:-1])
     print("[Receive][Number %04d] Telemetry from Python2: %s\n" % (telemetryCounter, line["debug"]))
     telemetryCounter = telemetryCounter + 1
 
-    # Command
+    # Command: Write
     msg = (json.dumps(commands[commandCounter % len(commands)]) + "\n").encode("utf-8")
     os.write(commandPipe, msg)
     print("[Sending][Number %04d] Command to Python2\n" % commandCounter)
