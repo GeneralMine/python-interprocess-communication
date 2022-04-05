@@ -1,0 +1,78 @@
+{
+    "ID": "-0x165bdc8094b34b18",
+    "identification": {
+        "name": "TestDrone",
+        "type": "MULTICOPTER",
+        "manufacturer": "Marvin",
+        "serialnumber": "SITL-001",
+        "describtion": "This is only for research purposes."
+    },
+    "telemetry": {
+        "attitude": {
+            "pitch": 0.000055299733503488824,
+            "roll": 0.0002368947898503393,
+            "yaw": -1.5902669429779053
+        },
+        "gps": [
+            {
+                "count": 10,
+                "fix": 6,
+                "lat": 48.7427599,
+                "lon": 9.0988499,
+                "alt": 456.07,
+                "groundspeed": 0.002229237463325262,
+                "type": "GPS"
+            }
+        ],
+        "compass": [
+            {
+                "heading": 268
+            }
+        ],
+        "system": {
+            "armed": false,
+            "systemstatus": "STANDBY",
+            "operationmode": "STABILIZE",
+            "operationtime": 0,
+            "uptime": 123.32,
+            "currentpilot": "None"
+        },
+        "batteries": [
+            {
+                "level": 0,
+                "voltage": 12.587,
+                "current": 0
+            }
+        ],
+        "connectivity": "WIFI",
+        "homeposition": {
+            "lat": 0,
+            "lon": 0,
+            "alt": 0,
+            "isground": false
+        }
+    },
+    "debug": null,
+    "specification": {
+        "batteries": [
+            {
+                "capacity": 5000
+            }
+        ],
+        "gps": [
+            {
+                "name": "GPS0"
+            }
+        ],
+        "attitude": {},
+        "compass": [
+            {
+                "name": "Compass0"
+            }
+        ],
+        "system": {
+            "name": "Ardupilot",
+            "version": "APM:Copter-4.1.4-rc0"
+        }
+    }
+}
