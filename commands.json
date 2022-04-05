@@ -1,0 +1,27 @@
+[
+    {
+        "channel": "function",
+        "type": "aquire",
+        "payload": "1"
+    },
+    {
+        "channel": "control",
+        "type": "takeoff",
+        "payload": "10"
+    },
+    {
+        "channel": "control",
+        "type": "move",
+        "payload": "[1,2,3]"
+    },
+    {
+        "channel": "control",
+        "type": "land",
+        "payload": "0"
+    },
+    {
+        "channel": "function",
+        "type": "free",
+        "payload": "0"
+    }
+]
